@@ -3,16 +3,16 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 void CreateRandomNumbersArray(int[] array)
+{
+    Console.Write("Введите начальное значение диапазона элементов массива: ");
+    int startElementValue = int.Parse(Console.ReadLine()!);
+    Console.Write("Введите конечное значение диапазона элементов массива: ");
+    int endElementValue = int.Parse(Console.ReadLine()!);
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write("Введите начальное значение диапазона элементов массива: ");
-        int startElementValue = int.Parse(Console.ReadLine()!);
-        Console.Write("Введите конечное значение диапазона элементов массива: ");
-        int endElementValue = int.Parse(Console.ReadLine()!);
-        for (int i = 0; i < array.Length; i++)
-        {
-            array[i] = new Random().Next(startElementValue, endElementValue+1);
-        }        
+        array[i] = new Random().Next(startElementValue, endElementValue + 1);
     }
+}
 void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -21,14 +21,14 @@ void PrintArray(int[] array)
     }
 }
 int GetOddIndexValuesSum(int[] array)
+{
+    int sum = 0;
+    for (int i = 1; i < array.Length; i += 2)
     {
-        int sum = 0;
-        for (int i = 1; i < array.Length; i += 2)
-        {
-            sum += array[i];
-        }
-        return sum;
-    }    
+        sum += array[i];
+    }
+    return sum;
+}
 Console.WriteLine();
 Console.WriteLine("Программа определения суммы элементов на нечётных позициях массива");
 Console.WriteLine("(для одномерного массива случайных чисел).");
@@ -39,7 +39,7 @@ if (numberOfElements <= 0)
 {
     Console.WriteLine("Неверный ввод");
 }
-else 
+else
 {
     int[] array = new int[numberOfElements];
     CreateRandomNumbersArray(array);
