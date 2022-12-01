@@ -28,7 +28,7 @@ Console.WriteLine();
 Console.WriteLine("Программа определения количества чётных чисел в массиве");
 Console.WriteLine("(для массива случайных положительных трёхзначных чисел).");
 Console.WriteLine();
-Console.Write("Введите количество элементов массива: ");
+Console.Write("Введите количество: ");
 int numberOfElements = int.Parse(Console.ReadLine()!);
 if (numberOfElements <= 0)
 {
